@@ -1,0 +1,301 @@
+ @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700&display=swap');
+
+:root {
+  --bg-primary: #ffe4e6;
+  --bg-secondary: #fff0f3;
+  --text-primary: #2c3e50;
+  --text-secondary: #4a5568;
+  --accent-color: #d63384;
+  --accent-soft: #f06292;
+  --border-color: #e0a6b6;
+  --shadow: rgba(214, 51, 132, 0.15);
+  --card-hover: rgba(214, 51, 132, 0.1);
+  
+  --dark-bg-primary: #1a2634;
+  --dark-bg-secondary: #273240;
+  --dark-text-primary: #e2e8f0;
+  --dark-text-secondary: #a0aec0;
+  --dark-accent-color: #4a6aad;
+  --dark-accent-soft: #5d7ba3;
+  --dark-border-color: #334155;
+  --dark-shadow: rgba(255, 255, 255, 0.08);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.3s ease-in-out;
+}
+
+body {
+  font-family: 'Manrope', sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 2rem;
+}
+
+h1 {
+  text-align: center;
+  font-weight: 700;
+  color: var(--accent-color);
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  letter-spacing: -1px;
+  text-shadow: 2px 2px 10px var(--shadow);
+}
+
+.product-card {
+  background: var(--bg-secondary);
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 8px 20px var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 30px var(--card-hover);
+}
+
+.product-image {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+.like-button, .submit-review {
+  background: var(--accent-color);
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 24px;
+  font-weight: 600;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px var(--shadow);
+}
+
+.like-button:hover, .submit-review:hover {
+  background: var(--accent-soft);
+  transform: translateY(-3px);
+}
+
+.review-form input, .review-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: var(--bg-primary);
+}
+
+.review-item {
+  background: var(--bg-secondary);
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 10px var(--shadow);
+}
+
+body.dark-mode {
+  background-color: var(--dark-bg-primary);
+  color: var(--dark-text-primary);
+}
+
+body.dark-mode .product-card {
+  background-color: var(--dark-bg-secondary);
+  border-color: var(--dark-border-color);
+  box-shadow: 0 8px 20px var(--dark-shadow);
+}
+
+body.dark-mode .like-button, body.dark-mode .submit-review {
+  background: var(--dark-accent-color);
+}
+
+body.dark-mode .like-button:hover, body.dark-mode .submit-review:hover {
+  background: var(--dark-accent-soft);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+} 
+/* @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700&display=swap');
+
+:root {
+  --bg-primary: #ffe4e6;
+  --bg-secondary: #fff0f3;
+  --text-primary: #2c3e50;
+  --text-secondary: #4a5568;
+  --accent-color: #d63384;
+  --accent-soft: #f06292;
+  --border-color: #e0a6b6;
+  --shadow: rgba(214, 51, 132, 0.15);
+  --card-hover: rgba(214, 51, 132, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.3s ease-in-out;
+}
+
+body {
+  font-family: 'Manrope', sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+h1 {
+  text-align: center;
+  font-weight: 700;
+  color: var(--accent-color);
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  letter-spacing: -1px;
+  text-shadow: 2px 2px 10px var(--shadow);
+  grid-column: span 2;
+}
+
+.product-card {
+  background: var(--bg-secondary);
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+  padding: 2rem;
+  box-shadow: 0 8px 20px var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 30px var(--card-hover);
+}
+
+.product-image-container {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.product-image {
+  width: 100%;
+  max-height: 300px;
+  object-fit: contain;
+  border-radius: 12px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.product-image:hover {
+  transform: scale(1.1);
+}
+
+.image-carousel {
+  display: flex;
+  overflow-x: auto;
+  gap: 10px;
+  padding: 10px 0;
+}
+
+.image-carousel img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.image-carousel img:hover {
+  transform: scale(1.2);
+}
+
+.like-button, .submit-review {
+  background: var(--accent-color);
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 24px;
+  font-weight: 600;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px var(--shadow);
+}
+
+.like-button:hover, .submit-review:hover {
+  background: var(--accent-soft);
+  transform: translateY(-3px);
+}
+
+.review-form input, .review-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: var(--bg-primary);
+}
+
+.review-item {
+  background: var(--bg-secondary);
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 10px var(--shadow);
+}
+
+@media (max-width: 768px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+} */
+
+
